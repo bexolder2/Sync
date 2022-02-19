@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sync.SettingsPage"
+             xmlns:vm="clr-namespace:Sync.ViewModel;assembly=Sync.ViewModel"
+             Title="Settings">
+    <ContentPage.BindingContext>
+        <vm:SettingsPageViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Add folder for sync"
+                    Margin="10"
+                    CornerRadius="5"
+                    Command="{Binding SelectFolderCommand}"/>
+
+            <Label Text="Selected folders"
+                   Margin="10"/>
+
+            <ListView ItemsSource="{Binding Folders}"
+                      Margin="10"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
